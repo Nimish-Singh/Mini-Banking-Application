@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vistaar Bank</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<style>
+	.navbar {
+		margin-bottom: 0;
+		background-color: #0066ff;
+		z-index: 9999;
+		border: 0;
+		font-size: 12px !important;
+		line-height: 1.42857143 !important;
+		letter-spacing: 4px;
+		border-radius: 0;
+		font-family: Montserrat, sans-serif;
+	}
+
+	.navbar li a, .navbar .navbar-brand {
+		color: #fff !important;
+	}
+
+	.navbar-nav li a:hover, .navbar-nav li.active a {
+		color: #0066ff !important;
+		background-color: #fff !important;
+	}
+
+	.navbar-default .navbar-toggle {
+		border-color: transparent;
+		color: #fff !important;
+	}
+
+	.dropdown-menu {
+		color: #fff;
+		background-color: #0066ff;
+	}
+
+	.carousel-control.right, .carousel-control.left {
+		background-image: none;
+		color: #fff;
+	}
+
+	.carousel-indicators li {
+		border-color: #0066ff;
+	}
+	
+	.carousel-indicators li.active {
+		background-color: #6699ff;
+	}
+
+	.item span {
+		font-style: normal;
+	}
+
+	.carousel {
+		background-color: #6699ff;
+	}
+
+	.carousel-caption {
+		color: #fff;
+		background-color: #6699ff;
+		position: relative;
+		left: auto;
+		right: auto;
+	}
+
+	h2 {
+		font-size: 24px;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	.standard-formatting-light {
+		color:#fff;
+		background-color: #6699ff;
+	}
+	
+	.standard-formatting-dark {
+		color:#fff;
+		background-color: #0066ff;
+	}
+
+
+	p {
+		color: #d9d9d9;
+	}
+
+	.carousel-indicators li {
+		background: #ff6;
+	}
+
+	.carousel-indicators .active {
+		background: #f00;
+	}
+
+	footer .glyphicon {
+		font-size: 20px;
+		margin-bottom: 20px;
+		color: #009;
+	}
+        
+        .jumbotron {
+		background-color: #6699ff;
+		color: #000;
+		padding: 80px 25px 100px 25px;
+		
+	}
+
+	.panel {
+		border: 1px solid #6699ff;
+		border-radius: 0;
+		transition: box-shadow 0.5s;
+	}
+	
+	.panel:hover {
+		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	}
+
+	.panel-heading {
+		color: #fff !important;
+		background-color: #6699ff !important;
+		padding: 25px;
+		border-bottom: 1px solid transparent;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.panel-footer {
+		background-color: #6699ff;
+	}
+	
+	.panel-body p {
+		color: #06f;
+	}		
+	
+	@media screen and (max-width: 768px) {
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+	}
+</style>
+
+<script>
+	$(document).ready(function(){
+		//Add smooth scrolling to all links in navbar + footer link
+		$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+		
+		//Make sure this.hash has a value before overriding default behaviour
+		if(this.hash != "") {
+
+			//Prevent default anchor click behaviour
+			event.preventDefault();
+
+			//Store hash
+			var hash=this.hash;
+		
+			//Using jQuery,s animate() method to add smooth page scroll
+			//The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 900, function(){
+			
+				//Add hash (#) to URL when done scrolling (default click behaviour)
+				window.location.hash = hash;
+				});
+			} //End if
+			});
+	});
+</script>
+
+</head>
+
+<body id="loanFormPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img src="images/Vistaar logo.jpg" width="80" height="50"/>
+			<a class="navbar-brand" href="index.html#indexPage">Vistaar Bank Pvt. Ltd.</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">PERSONAL
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewAccount">View Account Details</a></li>
+						<li><a href="TransferMoney">Transfer Money</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">LOANS
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="LoanApply">Apply For Loan</a></li>
+						<li><a href="LoanStatus">View Loan Status</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html#about">ABOUT US</a></li>
+				<li><a href="index.html#contact">CONTACT US</a></li>
+                                <li><a href="LoginNeeded">Login</a></li>
+                                <li><a href="LogoutNeeded">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="jumbotron">
+    <div class="page-header text-center">
+	<h4>Please fill out this form. After initial processing, we'll contact you on the number you provide here.</h4>
+    </div>
+
+    <form role="form" action="LoanRegister" method="post">
+		<div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-2">	
+				<div class="form-group">
+					<label for="inputType">Type of loan</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<select class="form-control" name="loan_type">
+					<option>Education loan</option>
+					<option>Home loan</option>
+                                        <option>Car loan</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>	
+     
+                <div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-2">	
+				<div class="form-group">
+					<label for="inputEstimatedAmount">Estimated loan amount (in Rupees)</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" name="estimatedAmount" placeholder="Estimated Loan Amount" required />
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+                <div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-2">	
+				<div class="form-group">
+					<label for="inputVendor">Vendor name</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" name="vendor" placeholder="Vendor's name" required />
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+        
+                <div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-2">	
+				<div class="form-group">
+					<label for="inputJob">Your job description</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+                            <textarea class="form-control" name="job" rows="5" placeholder="Job description" required /></textarea>
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+        
+                <div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-2">	
+				<div class="form-group">
+					<label for="inputContactNum">Contact number</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" name="contactNum" placeholder="Contact number" required />
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+	<div class="row">
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-2">
+			<button type="submit" class="btn btn-default">Apply</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+		</div>
+		<div class="col-sm-4">
+		</div>
+	</form>
+</div>
+    
+    
+    <footer class="container-fluid text-center standard-formatting-dark">
+	<p>Copyright : Vistaar Bank Pvt. Ltd.</p>
+    </footer>
+
+</body>
+</html>

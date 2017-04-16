@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vistaar Bank</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<style>
+	.navbar {
+		margin-bottom: 0;
+		background-color: #0066ff;
+		z-index: 9999;
+		border: 0;
+		font-size: 12px !important;
+		line-height: 1.42857143 !important;
+		letter-spacing: 4px;
+		border-radius: 0;
+		font-family: Montserrat, sans-serif;
+	}
+
+	.navbar li a, .navbar .navbar-brand {
+		color: #fff !important;
+	}
+
+	.navbar-nav li a:hover, .navbar-nav li.active a {
+		color: #0066ff !important;
+		background-color: #fff !important;
+	}
+
+	.navbar-default .navbar-toggle {
+		border-color: transparent;
+		color: #fff !important;
+	}
+
+	.dropdown-menu {
+		color: #fff;
+		background-color: #0066ff;
+	}
+
+	.carousel-control.right, .carousel-control.left {
+		background-image: none;
+		color: #fff;
+	}
+
+	.carousel-indicators li {
+		border-color: #0066ff;
+	}
+	
+	.carousel-indicators li.active {
+		background-color: #6699ff;
+	}
+
+	.item span {
+		font-style: normal;
+	}
+
+	.carousel {
+		background-color: #6699ff;
+	}
+
+	.carousel-caption {
+		color: #fff;
+		background-color: #6699ff;
+		position: relative;
+		left: auto;
+		right: auto;
+	}
+
+	h2 {
+		font-size: 24px;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	.standard-formatting-light {
+		color:#fff;
+		background-color: #6699ff;
+	}
+	
+	.standard-formatting-dark {
+		color:#fff;
+		background-color: #0066ff;
+	}
+
+
+	p {
+		color: #d9d9d9;
+	}
+
+	.carousel-indicators li {
+		background: #ff6;
+	}
+
+	.carousel-indicators .active {
+		background: #f00;
+	}
+
+	footer .glyphicon {
+		font-size: 20px;
+		margin-bottom: 20px;
+		color: #009;
+	}
+
+	.panel {
+		border: 1px solid #6699ff;
+		border-radius: 0;
+		transition: box-shadow 0.5s;
+	}
+	
+	.panel:hover {
+		box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	}
+
+	.panel-heading {
+		color: #fff !important;
+		background-color: #6699ff !important;
+		padding: 25px;
+		border-bottom: 1px solid transparent;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.panel-footer {
+		background-color: #6699ff;
+	}
+	
+	.panel-body p {
+		color: #06f;
+	}		
+	
+	@media screen and (max-width: 768px) {
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+	}
+</style>
+
+<script>
+	$(document).ready(function(){
+		//Add smooth scrolling to all links in navbar + footer link
+		$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+		
+		//Make sure this.hash has a value before overriding default behaviour
+		if(this.hash != "") {
+
+			//Prevent default anchor click behaviour
+			event.preventDefault();
+
+			//Store hash
+			var hash=this.hash;
+		
+			//Using jQuery,s animate() method to add smooth page scroll
+			//The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 900, function(){
+			
+				//Add hash (#) to URL when done scrolling (default click behaviour)
+				window.location.hash = hash;
+				});
+			} //End if
+			});
+	});
+</script>
+
+</head>
+
+<body id="indexPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img src="images/Vistaar logo.jpg" width="80" height="50"/>
+			<a class="navbar-brand" href="index.html#indexPage">Vistaar Bank Pvt. Ltd.</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">PERSONAL
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="ViewAccount">View Account Details</a></li>
+						<li><a href="TransferMoney">Transfer Money</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">LOANS
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="LoanApply">Apply For Loan</a></li>
+						<li><a href="LoanStatus">View Loan Status</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html#about">ABOUT US</a></li>
+				<li><a href="index.html#contact">CONTACT US</a></li>
+                                <li><a href="LoginNeeded">Login</a></li>
+                                <li><a href="LogoutNeeded">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img class="center-block" src="images/Customer Satisfaction.jpg" alt="Ranked number 1 in customer satisfaction" width="750" height="400" />
+				<div class="carousel-caption">
+					<h3>Ranked <strong>number 1</strong> in customer satisfaction survey</h3>
+				</div>
+		</div>
+		<div class="item">
+			<img class="center-block" src="images/Android app.png" alt="Our Android app now available at the Google Play Store " width="750" height="400" />
+				<div class="carousel-caption">
+					<h3>Our <strong>Android app</strong> now available at the Google Play Store</h3>
+				</div>
+		</div>
+		<div class="item">
+			<img class="center-block" src="images/Credit card.jpg" alt="Shop with grandeur using our Premium credit card" width="750" height="400" />
+				<div class="carousel-caption">
+					<h3>Shop with grandeur using our <strong>Premium credit card</strong></h3>
+				</div>
+		</div>
+	</div>
+
+	<!-- Left and right controls -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
+<div id="about" class="container-fluid standard-formatting-dark">
+	<h2 class="text-center lead">About Us</h2>
+	<div class="row">
+		<div class="col-sm-9">
+			<p>Founded in 1985, Vistaar Bank has been at the helm of supporting the financial dreams of millions of people in the country.<br />
+			With easy loans available at low rates, we have been the first choice bank for rural households.<br />
+			We have been the market leaders with technological advancements.</p>
+			<p>Our founder, Mr. Prakash Jain, believes strongly in the virtues of honesty and dedication, which are equally mirrored by all our employees as well.</p>
+			<p>We have constantly been nominated for a number of awards, and have been consistently ranked amongst the top in various customer satisfaction surveys.</p>
+			<p>We strongly believe in connecting each household with seamless banking facilities
+		</div>
+		<div class="col-sm-3">
+			<img class="right-block" src="images/Founder photo.png" width="200" height="180" />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<div class="panel panel-default text-center">
+				<div class="panel-heading standard-formatting-light">
+					<h1>Stakeholders and partners</h1>
+				</div>
+				<div class="panel-body">
+					<p><strong>Rockhold Companies</strong></p>
+					<p><strong>Connect Ltd.</strong></p>
+					<p><strong>Silverlight Corp.</strong></p>
+					<p><strong>Edrol Technological Solutions</strong></p>
+				</div>
+				<div class="panel-footer">
+					<img class="center-block" src="images/Stakeholders.jpg" width="200" height="100" />
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-5">
+			<div class="panel panel-default text-center">
+				<div class="panel-heading">
+					<h1>Services</h1>
+				</div>
+				<div class="panel-body">
+					<p><strong>Account management</strong></p>
+					<p><strong>Personalised service</strong></p>
+					<p><strong>Payment of bills</strong></p>
+					<p><strong>Loans</strong></p>
+				</div>
+				<div class="panel-footer">
+					<img class="center-block" src="images/Services.jpg" width="200" height="100" />
+				</div>
+			</div> 
+		</div> 
+	</div>
+</div>
+
+<div id="contact" class="container-fluid standard-formatting-light">
+	<h2  class="text-center">CONTACT US</h2>
+	<div class="row">
+		<div class="col-sm-5">
+			<p>Our helpdesk is available 24x7!</p>
+			<p><span class="glyphicon glyphicon-earphone"></span> +00 15151515</p>
+			<p><span class="glyphicon glyphicon-envelope"></span> contact@vistaarbanking.com</p>			
+		</div>
+		<div class="col-sm-7">
+			<p>Or, drop in your number and we will contact you within the next 24 hours</p>
+			<div class="row">
+				<div class="col-sm-6 form-group">
+					<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+				</div>
+				<div class="col-sm-6 form-group">
+					<input class="form-control" id="contact" name="contact" placeholder="Phone Number" type="email" required>
+				</div>
+			</div>
+			<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+			<br />
+			<div class="row">
+				<div class="col-sm-12 form-group">
+					<button class="btn btn-default pull-right" type="submit">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="container-fluid text-center standard-formatting-dark">
+	<a href="index.html#indexPage" title="Go To Top">
+		<span class="glyphicon glyphicon-chevron-up"></span>
+	</a>
+	<p>Copyright : Vistaar Bank Pvt. Ltd.</p>
+</footer>
+
+</body>
+</html>
